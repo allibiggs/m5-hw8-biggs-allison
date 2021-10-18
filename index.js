@@ -47,10 +47,14 @@ var winningBox = function getRandomIntInclusive(min, max) {
 // if the numbers match, display a winning message by changing the text content of the div#message element
 // if the numbers match, increment wins and display the win count in div#wins
 
-if (winningBox == numWasClicked) {
+var message = document.getElementById('messaage')
 
+if (winningBox === Number(numWasClicked)) {
+  message.textContent = 'You won!'
+  wins++
+} else {
+  
 }
-
 
 // if the numbers don't match, change the div#message element's text to a random losing message from the array above
 // if the numbers don't match, increment losses and display the loss count in div#losses
