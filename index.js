@@ -38,15 +38,15 @@ boxElement.onclick = function(event) {
   }
   // console.log(winningBox)
 
-  if (winningBox == boxElement.onclick) {
-    messageEl.textContent = "Good job!"
-    winsEl.textContent = wins++
+  if (winningBox == numWasClicked) {
+      messageEl.textContent = "Good job!"
+      winsEl.textContent = wins++
   } else {
-    function randomMessage(messages) {
-      return messages[Math.floor(Math.random() * messages.length)];
+      function randomMessage(messages) {
+        return messages[Math.floor(Math.random() * messages.length)];
+      }
+      lossesEl.textContent = losses++
     }
-    lossesEl.textContent = losses++
-  }
   }
 }
 
