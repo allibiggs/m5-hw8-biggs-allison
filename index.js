@@ -29,27 +29,29 @@ for (var i = 0; i < boxElements.length; i++) {
 boxElement.onclick = function(event) {
   var numWasClicked = Number(event.target.textContent)
 
-  // console.log(Number(numWasClicked))
+  console.log(Number(numWasClicked))
 
-  var winningBox = function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
-  }
-  // console.log(winningBox)
+
+  // var winningBox = function getRandomIntInclusive(min, max) {
+  //   min = Math.ceil(min);
+  //   max = Math.floor(max);
+  //   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+  // }
+  var winningBox = Math.floor(Math.random() * 3) + 1
+
+  console.log(winningBox)
 
   if (winningBox == numWasClicked) {
-      messageEl.textContent = "Good job!"
-      winsEl.textContent = wins++
+    messageEl.textContent = "Good job!"
+    wins++
+    winsEl.textContent = 'wins: ' + wins
   } else {
-      function randomMessage(messages) {
-        return messages[Math.floor(Math.random() * messages.length)];
-      }
-      lossesEl.textContent = losses++
-    }
+    messageEl.textContent = messages[Math.floor(Math.random() * messages.length)]
+    losses++
+    lossesEl.textContent = 'losses: ' + losses
+  }
   }
 }
-
 
 
 // create a random number between 1-3 and store it to a variable
@@ -59,15 +61,14 @@ boxElement.onclick = function(event) {
 //   max = Math.floor(max);
 //   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 // }
-// console.log(winningBox(1, 3))
-
+// // console.log(winningBox(1, 3))
 
 // determine if the box clicked is equal to the random number
 // if the numbers match, display a winning message by changing the text content of the div#message element
 // if the numbers match, increment wins and display the win count in div#wins
 // console.log(messageEl.textContent)
 
-// if (winningBox == boxElement.onclick) {
+// if (winningBox(1, 3) == boxElement.onclick) {
 //   messageEl.textContent = "Good job!"
 //   winsEl.textContent = wins++
 // } else {
